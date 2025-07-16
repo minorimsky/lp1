@@ -35,6 +35,7 @@ header {
   }
 }
 .header__nav {
+  margin-top: 25px;
   margin-left: 30px;
 }
 .header-nav {
@@ -45,12 +46,32 @@ header {
   gap: 20px;
 }
 .header-nav__item {
-  line-height: 67px;
 }
 
 .header-nav__link {
+  position: relative;
+  display: inline-block;
+  height: 17px;
   color: #333;
   font-size: 14px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #333;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: transform .3s;
+  }
+
+  &:hover::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
+  }
 }
 .header__info {
   margin-left: auto;
@@ -67,15 +88,35 @@ header {
   margin-top: 14px;
 }
 .header-info__link {
+  position: relative;
   display: inline-block;
   margin-top: 12.5px;
   color: #333;
   font-size: 14px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #333;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: transform .3s;
+  }
+
+  &:hover::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
+  }
 }
 .header-info__btn {
   display: inline-block;
   width: 120px;
   height: 39px;
+  border: 1px solid #0065F8;
   border-radius: 50px;
   background-color: #0065F8;
   color: #fff;
@@ -84,10 +125,8 @@ header {
   line-height: 39px;
   transition: 0.3s;
 
-
   &:hover {
     background-color: #fff;
-    border: 1px solid #0065F8;
     color: #0065F8;
   }
 }
@@ -988,12 +1027,13 @@ header {
 }
 .info__items {
   display: flex;
-  width: calc(100% - (275px + 24px));
+  width: calc(100% - (275px + 20px));
   margin-left: auto;
 }
 
 .info__item {
   width: 20%;
+  gap: 5px;
 }
 .info-item__title {
   height: 19px;
@@ -1001,10 +1041,15 @@ header {
   line-height: 19px;
 }
 .info-item__lists {
-  margin-top: 37px;
+  margin-top: 20px;
   list-style: none;
 }
-.info-item__list {}
+.info-item__list {
+
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+}
 
 .info-item-list {
   position: relative;
@@ -1013,10 +1058,6 @@ header {
   line-height: 19px;
   color: #333;
   font-size: 14px;
-
-  &:not(:first-child) {
-    margin-top: 10px;
-  }
 
   &::before {
     content: '';
@@ -1111,7 +1152,6 @@ footer {
       background-color: #777;
     }
   }
-
 }
 .footer__link {
   position: relative;
@@ -1122,7 +1162,7 @@ footer {
   line-height: 17px;
 
 &::before {
-    content: '';/*  */
+    content: '';
     position: absolute;
     left: 0;
     bottom: 0;
