@@ -927,8 +927,7 @@ header {
   margin-left: auto;
 }
 .cta__contents {
-  width: 502px;
-  margin-right: auto;
+  margin-right: 100px;
   text-align: center;
 }
 .cta__main-text {
@@ -944,6 +943,7 @@ header {
 .cta__links {
   display: flex;
   justify-content: space-around;
+  width: 90%;
   margin-top: 18px;
 }
 .cta__btn {
